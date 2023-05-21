@@ -18,7 +18,7 @@
 
 
 4. 安裝必要套件`discord_webhook`,`zenora`,`flask`
-5. 創建一個data.json資料夾
+5. 創建一個data資料夾
 6. Enjoy it !
 
 # 申明
