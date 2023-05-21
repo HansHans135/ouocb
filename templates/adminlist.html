@@ -1,0 +1,44 @@
+<head>
+	<title>匿名靠北</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<html class="bg-gray-800">
+
+	<h1 class="text-center font-bold text-6xl mb-2 text-white">匿名靠北</h1>
+	<h1 class="text-center text-3xl mb-8 text-white">所有文章</h1>
+
+	{% if not user %}
+	{% for v in l %}
+	<p class="text-center text-white">
+		{% for a in v %}
+		{{a}}<br>
+		{% endfor %}
+	</p>
+	{% endfor %}
+	{% else %}
+	{% for v in l %}
+	<div class="bg-gray-600 text-white text-center border-8">
+		<br>
+		<div class="flex items-center justify-center rounded-center">
+
+			<a href="/admin/ok/{{v[0]}}/{{v[1]}}"><button
+					class="inner text-center bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded popuptest">通過</button></a>
+			<p>or</p>
+			<a href="/admin/no/{{v[0]}}/{{v[1]}}"><button
+					class="inner text-center bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded popuptest">不通過</button></a>
+		</div>
+		<p class="text-center text-white">
+			{% for a in v %}
+			{{a}}<br>
+			{% endfor %}
+		</p>
+		<br>
+	</div>
+	{% endfor %}
+	{% endif %}
+
+
+</html>
